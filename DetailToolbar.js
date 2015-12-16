@@ -1,6 +1,8 @@
 'use strict';
 
 var React = require('react-native');
+var Icon = require('react-native-vector-icons/Ionicons');
+
 var {
   AppRegistry,
   Platform,
@@ -78,48 +80,33 @@ var DetailToolbar = React.createClass({
         <View style={styles.actionsContainer}>
           <TouchableElement onPress={this._onPressBackButton}>
             <View style={styles.actionItem}>
-              <Image
-                style={styles.backIcon}
-                source={require('image!ic_back_white')}
-                resizeMode='contain' />
+              <Icon name='ios-arrow-back' size={30} color="#FFF" />
             </View>
           </TouchableElement>
           <View style={{flex: 1}} />
           <TouchableElement onPress={this._onPressShareButton}>
             <View style={styles.actionItem}>
-              <Image
-                style={styles.actionIcon}
-                source={require('image!ic_share_white')}
-                resizeMode='contain' />
+              <Icon name='share' size={30} color="#FFF" />
             </View>
           </TouchableElement>
           <TouchableElement onPress={this._onPressCollectButton}>
             <View style={styles.actionItem}>
-              <Image
-                style={styles.actionIcon}
-                source={require('image!ic_collect_white')}
-                resizeMode='contain' />
+              <Icon name='ios-star' size={30} color="#FFF" />
             </View>
           </TouchableElement>
           <TouchableElement onPress={this._onPressCommentButton}>
             <View style={styles.actionItem}>
-              <Image
-                style={styles.actionIconWithCount}
-                source={require('image!ic_comment_white')}
-                resizeMode='contain' />
+              <Icon name='chatbox-working' size={25} color="#FFF" />
               <Text style={styles.count}>
-                {(this.state.isLoading || !this.state.extra) ? '...' : this.state.extra.comments}
+                {(this.state.isLoading || !this.state.extra) ? '...' : ' ' + this.state.extra.comments}
               </Text>
             </View>
           </TouchableElement>
           <TouchableElement onPress={this._onPressPraiseButton}>
             <View style={styles.actionItem}>
-              <Image
-                style={styles.actionIconWithCount}
-                source={require('image!ic_praise_white')}
-                resizeMode='contain' />
+              <Icon name='ios-heart' size={25} color="#FFF" />
               <Text style={styles.count}>
-                {(this.state.isLoading || !this.state.extra) ? '...' : this.state.extra.popularity}
+                {(this.state.isLoading || !this.state.extra) ? '...' : ' ' + this.state.extra.popularity}
               </Text>
             </View>
           </TouchableElement>
